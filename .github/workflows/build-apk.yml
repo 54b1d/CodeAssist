@@ -27,12 +27,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build debug apk
-        uses: eskatos/gradle-command-action@v1
-        with:
-          arguments: assembleRelease
-          distributions-cache-enabled: true
-          dependencies-cache-enabled: true
-          configuration-cache-enabled: true
+        run: ./gradlew assembleRelease
 
       - name: Upload debug apk
         uses: actions/upload-artifact@v2
